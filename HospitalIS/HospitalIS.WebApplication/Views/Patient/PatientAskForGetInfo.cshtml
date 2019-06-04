@@ -1,0 +1,128 @@
+﻿@using HospitalISDBContext.Enums
+@model HospitalIS.WebApplication.Models.PatientInfoModel
+
+@{
+    ViewBag.Title = "PatientAskForGetInfo";
+}
+
+<h2>Health card</h2>
+
+<div>
+    <h4>Patient @Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.Surname)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentificationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentificationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileCreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfileCreationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Blood type")
+        </dt>
+
+        <dd>
+            @Html.DisplayName(Enum.GetName(typeof(BloodType), Model.BloodType))
+        </dd>
+        <text>
+            @if (User.IsInRole("Doctor") && Model.BloodType == BloodType.Unknown)
+            {
+                @Html.ActionLink("Change bloodtype", "UpdateBloodType", "Patient", new {identificationNumber = Model.IdentificationNumber}, null)
+            }
+        </text>
+    </dl>
+    <h5>Diseases</h5>
+    @if (Model.Diseases != null)
+    {
+        <table class="table">
+            @foreach (var item in Model.Diseases)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    @if (User.IsInRole("Doctor"))
+    {  
+    <text>
+        @Html.ActionLink("+Add new", "AddExistingDiseaseHealthCard", "Patient", new { identificationNumber = Model.IdentificationNumber }, null)
+    </text>
+    }
+    <div class="divider"></div>
+    <h5>Doctors</h5>
+    @if (Model.Doctors != null)
+    {
+        <table class="table">
+            @foreach (var item in Model.Doctors)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Surname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Specialization)
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>
+    
+<p>
+    @if (User.IsInRole("Doctor"))
+    {
+        @Html.ActionLink("Back", "GetPatientsForDoctor", "Doctor", new { Username = User.Identity.Name }, null)
+    }
+    else
+    {
+        @Html.ActionLink("Back", "Index", "Doctor")
+    }
+</p>

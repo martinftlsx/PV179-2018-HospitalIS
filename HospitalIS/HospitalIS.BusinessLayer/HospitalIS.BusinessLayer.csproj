@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HospitalIS.BusinessLayer</RootNamespace>
+    <AssemblyName>HospitalIS.BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.2.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.4.1.1\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\BusinessLayerInstaller.cs" />
+    <Compile Include="Config\MappingConfig.cs" />
+    <Compile Include="DataTransferObjects\AddDiseaseDto.cs" />
+    <Compile Include="DataTransferObjects\Common\DtoBase.cs" />
+    <Compile Include="DataTransferObjects\Common\FilterDtoBase.cs" />
+    <Compile Include="DataTransferObjects\Common\QueryResultDto.cs" />
+    <Compile Include="DataTransferObjects\DiseaseDto.cs" />
+    <Compile Include="DataTransferObjects\DiseaseToHealthCardDto.cs" />
+    <Compile Include="DataTransferObjects\DiseaseToSympthomDto.cs" />
+    <Compile Include="DataTransferObjects\DoctorDto.cs" />
+    <Compile Include="DataTransferObjects\DoctorToPatientDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\DiseaseFilterDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\DoctorFilterDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\DoctorToPatientFilterDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\HealthCardFilterDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\PatientFilterDto.cs" />
+    <Compile Include="DataTransferObjects\Filters\SympthomFilterDto.cs" />
+    <Compile Include="DataTransferObjects\HealthCardDto.cs" />
+    <Compile Include="DataTransferObjects\PatientDto.cs" />
+    <Compile Include="DataTransferObjects\SympthomDto.cs" />
+    <Compile Include="Facades\Common\FacadeBase.cs" />
+    <Compile Include="Facades\DiseaseAndSympthomFacade.cs" />
+    <Compile Include="Facades\DiseaseFacade.cs" />
+    <Compile Include="Facades\DiseaseToHealthCardFacade.cs" />
+    <Compile Include="Facades\DoctorFacade.cs" />
+    <Compile Include="Facades\DoctorToPatientFacade.cs" />
+    <Compile Include="Facades\HealthCardFacade.cs" />
+    <Compile Include="Facades\PatientFacade.cs" />
+    <Compile Include="Facades\SympthomFacade.cs" />
+    <Compile Include="QueryObjects\DoctorToPatientQueryObject.cs" />
+    <Compile Include="QueryObjects\HealthCardQueryObject.cs" />
+    <Compile Include="QueryObjects\SympthomQueryObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryObjects\Common\QueryObjectBase.cs" />
+    <Compile Include="QueryObjects\DiseaseQueryObject.cs" />
+    <Compile Include="QueryObjects\DoctorQueryObject.cs" />
+    <Compile Include="QueryObjects\PatientQueryObject.cs" />
+    <Compile Include="Services\Common\CrudQueryServiceBase.cs" />
+    <Compile Include="Services\Common\ServiceBase.cs" />
+    <Compile Include="Services\Diseases\DiseaseService.cs" />
+    <Compile Include="Services\Diseases\IDiseaseService.cs" />
+    <Compile Include="Services\DiseaseToHealthCard\DiseaseToHealthCardService.cs" />
+    <Compile Include="Services\DiseaseToHealthCard\IDiseaseToHealthCardService.cs" />
+    <Compile Include="Services\DiseaseToSympthom\DiseaseToSympthomService.cs" />
+    <Compile Include="Services\DiseaseToSympthom\IDiseaseToSympthomService.cs" />
+    <Compile Include="Services\Doctors\DoctorService.cs" />
+    <Compile Include="Services\Doctors\IDoctorService.cs" />
+    <Compile Include="Services\DoctorToPatient\DoctorToPatientService.cs" />
+    <Compile Include="Services\DoctorToPatient\IDoctorToPatientService.cs" />
+    <Compile Include="Services\HealthCards\HealthCardService.cs" />
+    <Compile Include="Services\HealthCards\IHealthCardService.cs" />
+    <Compile Include="Services\Patients\IPatientService.cs" />
+    <Compile Include="Services\Patients\PatientService.cs" />
+    <Compile Include="Services\Sympthoms\ISympthomService.cs" />
+    <Compile Include="Services\Sympthoms\SympthomService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalIS.DataAccessLayer.EntityFramework\HospitalIS.DataAccessLayer.EntityFramework.csproj">
+      <Project>{6094ce4c-99ff-41c5-9193-c41f7ed7c64c}</Project>
+      <Name>HospitalIS.DataAccessLayer.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalIS.Infrastructure.EntityFramework\HospitalIS.Infrastructure.EntityFramework.csproj">
+      <Project>{4B32B969-E362-43BB-96A3-22B66A3854F7}</Project>
+      <Name>HospitalIS.Infrastructure.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HospitalIS.Infrastructure\HospitalIS.Infrastructure.csproj">
+      <Project>{6df08f0b-61b6-4920-bd8d-69abd1301795}</Project>
+      <Name>HospitalIS.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

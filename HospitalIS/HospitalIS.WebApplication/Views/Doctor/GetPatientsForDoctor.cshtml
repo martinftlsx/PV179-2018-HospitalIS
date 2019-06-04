@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HospitalIS.BusinessLayer.DataTransferObjects.PatientDto>
+
+@{
+    ViewBag.Title = "GetPatientsForDoctor";
+}
+
+<h2>Patients of doctor</h2>
+
+<div>
+    @Html.ActionLink("Add patient", "AddDoctorToPatient", "DoctorToPatient")
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentificationNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfileCreationDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentificationNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfileCreationDate)
+        </td>
+        @if (User.Identity.Name == Request.Params["Username"])
+        {
+            <td>
+                @Html.ActionLink("See health card", "PatientAskForGetInfoDoctor", "Patient", new { identificationNumber = item.IdentificationNumber }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Remove patient", "UnmatchDoctorAndPatient", "DoctorToPatient", new { identificationNumber = item.IdentificationNumber }, null)
+            </td>
+        }
+    </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to doctors", "Index")
+</div>
+

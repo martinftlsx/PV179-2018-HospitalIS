@@ -1,0 +1,59 @@
+﻿@using HospitalIS.WebApplication.Controllers
+@model HospitalIS.WebApplication.Models.AddDoctorToPatientModel
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="~/Content/themes/base/jquery-ui.css"/>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+@{
+    ViewBag.Title = "AddDoctorToPatient";
+}
+
+<h2>Find patient to add</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Name, "", new { @id = "searchInput", @class = "form-control"})
+            @Html.ValidationMessageFor(model => model.Name, "", new {@class = "text-danger"})
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Find" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back", "GetPatientsForDoctor", "Doctor", new { Username = User.Identity.Name }, null)
+</div>
+
+@section Scripts {
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <script>
+        $("#searchInput").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: '@Url.Action("Search","DoctorToPatient")',
+                    dataType: "json",
+                    data: { query: $("#searchInput").val() },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.Name, value: item.Name };
+                        }));
+                    },
+                    error: function (xhr, status, error) {
+                        alert("Error");
+                    }
+                });
+            }
+        });
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

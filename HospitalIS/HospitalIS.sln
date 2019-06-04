@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.DataAccessLayer.EntityFramework", "HospitalIS.DataAccessLayer.EntityFramework\HospitalIS.DataAccessLayer.EntityFramework.csproj", "{6094CE4C-99FF-41C5-9193-C41F7ED7C64C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.Infrastructure", "HospitalIS.Infrastructure\HospitalIS.Infrastructure.csproj", "{6DF08F0B-61B6-4920-BD8D-69ABD1301795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.Infrastructure.EntityFramework", "HospitalIS.Infrastructure.EntityFramework\HospitalIS.Infrastructure.EntityFramework.csproj", "{4B32B969-E362-43BB-96A3-22B66A3854F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2C2E6864-2482-47E8-96A7-689A3915B31F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E29D0538-89B6-49B6-8D67-BF12BAEC4ECB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.DataAccessLayer.EntityFramework.Tests", "HospitalIS.DataAccessLayer.EntityFramework.Tests\HospitalIS.DataAccessLayer.EntityFramework.Tests.csproj", "{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.Console", "HospitalIS.Console\HospitalIS.Console.csproj", "{E0DAD8EE-14A3-415B-BF54-CD06591F1694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.BusinessLayer", "HospitalIS.BusinessLayer\HospitalIS.BusinessLayer.csproj", "{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.BusinessLayer.Tests", "HospitalIS.BusinessLayer.Tests\HospitalIS.BusinessLayer.Tests.csproj", "{2CE6CA90-3498-4E7C-A041-868A4C2E35B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.WebAPI", "HospitalWebAPI\HospitalIS.WebAPI.csproj", "{C483471A-71A1-4751-8EB5-3CFAB5141C83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalIS.WebApplication", "HospitalIS.WebApplication\HospitalIS.WebApplication.csproj", "{51708DBF-B1D6-4E98-BB80-445C6B680B0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6094CE4C-99FF-41C5-9193-C41F7ED7C64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6094CE4C-99FF-41C5-9193-C41F7ED7C64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6094CE4C-99FF-41C5-9193-C41F7ED7C64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6094CE4C-99FF-41C5-9193-C41F7ED7C64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF08F0B-61B6-4920-BD8D-69ABD1301795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF08F0B-61B6-4920-BD8D-69ABD1301795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF08F0B-61B6-4920-BD8D-69ABD1301795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF08F0B-61B6-4920-BD8D-69ABD1301795}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B32B969-E362-43BB-96A3-22B66A3854F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B32B969-E362-43BB-96A3-22B66A3854F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B32B969-E362-43BB-96A3-22B66A3854F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B32B969-E362-43BB-96A3-22B66A3854F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0DAD8EE-14A3-415B-BF54-CD06591F1694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0DAD8EE-14A3-415B-BF54-CD06591F1694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0DAD8EE-14A3-415B-BF54-CD06591F1694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0DAD8EE-14A3-415B-BF54-CD06591F1694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9931B2-A03B-4501-BF30-4ADE99FBAEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE6CA90-3498-4E7C-A041-868A4C2E35B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE6CA90-3498-4E7C-A041-868A4C2E35B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE6CA90-3498-4E7C-A041-868A4C2E35B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE6CA90-3498-4E7C-A041-868A4C2E35B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C483471A-71A1-4751-8EB5-3CFAB5141C83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C483471A-71A1-4751-8EB5-3CFAB5141C83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C483471A-71A1-4751-8EB5-3CFAB5141C83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C483471A-71A1-4751-8EB5-3CFAB5141C83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51708DBF-B1D6-4E98-BB80-445C6B680B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51708DBF-B1D6-4E98-BB80-445C6B680B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51708DBF-B1D6-4E98-BB80-445C6B680B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51708DBF-B1D6-4E98-BB80-445C6B680B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6DF08F0B-61B6-4920-BD8D-69ABD1301795} = {2C2E6864-2482-47E8-96A7-689A3915B31F}
+		{4B32B969-E362-43BB-96A3-22B66A3854F7} = {2C2E6864-2482-47E8-96A7-689A3915B31F}
+		{559775D0-68DE-4FAC-AD2C-0C74FA0E8E11} = {E29D0538-89B6-49B6-8D67-BF12BAEC4ECB}
+		{2CE6CA90-3498-4E7C-A041-868A4C2E35B6} = {E29D0538-89B6-49B6-8D67-BF12BAEC4ECB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8B5F33E-CDB2-448E-8E0A-667619B6E632}
+	EndGlobalSection
+EndGlobal

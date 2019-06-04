@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Unicorn Clinic & Hospital Information System</h1>
+    @if (User.IsInRole("Doctor"))
+    {
+        <p class="lead">Manage patients in your number one Information System.</p>
+    }
+    else 
+    {
+        <p class="lead">Your number one choice in health care.</p>
+    }
+</div>
