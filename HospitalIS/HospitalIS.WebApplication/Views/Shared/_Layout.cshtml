@@ -7,14 +7,7 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/css/font-awesome.min.css")
     @Scripts.Render("~/bundles/modernizr")
-    @if (DateTime.Now <= DateTime.Parse("6:00:00") || DateTime.Now >= DateTime.Parse("18:00:00"))
-    {
-        <link rel="stylesheet" href="../../Content/bootswatch/darkly/bootstrap.min.css"/>
-    }
-    else
-    {
-        <link rel="stylesheet" href="../../Content/bootswatch/flatly/bootstrap.min.css"/>
-    }
+    <link rel="stylesheet" href="../../Content/bootswatch/flatly/bootstrap.min.css"/>
 
 </head>
 <body>
